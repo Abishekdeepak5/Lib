@@ -9,8 +9,10 @@ class FirstNew extends StatelessWidget {
       // color:Colors.red,
 
       children: <Widget>[
-        const Padding(
-            padding: EdgeInsets.all(8.0), // Adds padding to each child
+        Padding(
+            padding: EdgeInsets.all(
+              MediaQuery.of(context).size.width > 410 ? 10.0 : 0,
+            ), // Adds padding to each child
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -19,13 +21,16 @@ class FirstNew extends StatelessWidget {
                     Text(
                       "Viewing:",
                       style: TextStyle(
-                        fontSize: 14.0,
-                      ),
+                       fontSize: 
+                         MediaQuery.of(context).size.width > 280?14:10,
+                          ),
                     ),
                     Text(
                       " Auto (5149)",
                       style: TextStyle(
-                        fontSize: 15.0,
+                        fontSize: 
+                         MediaQuery.of(context).size.width > 280?15:12,
+      
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -37,7 +42,7 @@ class FirstNew extends StatelessWidget {
 //   child: Text('TextButton'),
 // ),
 
-                TextButton(
+                const TextButton(
                   onPressed: null,
                   child: SizedBox(
                     height: 35.0,
@@ -66,14 +71,14 @@ class FirstNew extends StatelessWidget {
         Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.only(top:10.0,bottom: 10.0), // Adds padding to each child
+            padding: const EdgeInsets.only(
+                top: 10.0, bottom: 10.0), // Adds padding to each child
             child: Row(
               children: [
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.only(
-                       left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                        
+                      left: MediaQuery.of(context).size.width > 410 ? 10.0 : 0,
                     ), // Adds padding to each child
                     child: Card(
                       // height: 140,
@@ -82,97 +87,54 @@ class FirstNew extends StatelessWidget {
                         color: Colors.white,
                         child: Padding(
                           padding: EdgeInsets.only(
-                             left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                         ), // Adds padding to each child
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              // mainAxisAlignment:MainAxisAlignment.start,
-                              Container(
-                                width: 40.0,
-                                height: 35.0,
-                                decoration: BoxDecoration(
-                                  color: const Color.fromARGB(
-                                      255, 60, 43, 211), // Color of the square
-                                  borderRadius: BorderRadius.circular(
-                                      40.0), // Border radius for circular shape
-                                ),
-                                child: Center(
-                                    child: Container(
-                                  width: 30.0,
-                                  height: 15.0,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white, // Color of the square
+                            left: MediaQuery.of(context).size.width > 410
+                                ? 10.0
+                                : 2.0,
+                            ), // Adds padding to each child
+                          child: SizedBox(
+                            height: 140.0,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // mainAxisAlignment:MainAxisAlignment.start,
+                                Container(
+                                  width: 40.0,
+                                  height: 35.0,
+                                  decoration: BoxDecoration(
+                                    color: const Color.fromARGB(255, 60, 43,
+                                        211), // Color of the square
+                                    borderRadius: BorderRadius.circular(
+                                        40.0), // Border radius for circular shape
                                   ),
-                                  child: const Center(
-                                    child: Text(
-                                      "AVECS",
-                                      style: TextStyle(
-                                        fontSize: 8.0,
-                                        fontWeight: FontWeight.bold,
-                                        decoration: TextDecoration.underline,
+                                  child: Center(
+                                      child: Container(
+                                    width: 30.0,
+                                    height: 15.0,
+                                    decoration: const BoxDecoration(
+                                      color:
+                                          Colors.white, // Color of the square
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "AVECS",
+                                        style: TextStyle(
+                                          fontSize: 8.0,
+                                          fontWeight: FontWeight.bold,
+                                          decoration: TextDecoration.underline,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                )),
-                              ),
-                              const Text(
-                                'View ID \nCards',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18.0),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding:EdgeInsets.only(
-                         left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                            ), // Adds padding to each child
-                    child: Card(
-                      // height: 140,
-                      child: Card(
-                        elevation: 10,
-                        color: Colors.white,
-                        child: Padding(
-                          padding:  EdgeInsets.only(
-                               left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                            top:5.0,), // Adds padding to each child
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              // mainAxisAlignment:MainAxisAlignment.start,
-                              Container(
-                                width: 40.0,
-                                height: 35.0,
-                                decoration: BoxDecoration(
-                                  color: Colors.orange, // Color of the square
-                                  borderRadius: BorderRadius.circular(
-                                      50.0), // Border radius for circular shape
+                                  )),
                                 ),
-                                child: const Center(
-                                  child: Icon(
-                                    Icons.directions_car,
-                                    color: Colors.white,
-                                    size:
-                                        20.0, // Set the size of the icon as needed
-                                  ),
+                                Text(
+                                  'View ID \nCards',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: MediaQuery.of(context).size.width > 410?18:14),
                                 ),
-                              ),
-                              const Text(
-                                'Request \nRoadside\nHelp',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18.0),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -182,9 +144,9 @@ class FirstNew extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.only(
-                       left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                         ), // Adds padding to each child
+                      left: MediaQuery.of(context).size.width > 410 ? 10.0 : 0,
+                      right: MediaQuery.of(context).size.width > 410 ? 10.0 : 0,
+                    ), // Adds padding to each child
                     child: Card(
                       // height: 140,
                       child: Card(
@@ -192,54 +154,114 @@ class FirstNew extends StatelessWidget {
                         color: Colors.white,
                         child: Padding(
                           padding: EdgeInsets.only(
-                             left:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
-                         
-                            ), // Adds padding to each child
-                          child: 
-                          SizedBox(
-                            height: 140.0,
-                            child:
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              // mainAxisAlignment:MainAxisAlignment.start,
-                              Container(
-                                width: 40.0,
-                                height: 35.0,
-                                decoration: BoxDecoration(
-                                  color: Colors.green, // Color of the square
-                                  borderRadius: BorderRadius.circular(
-                                      50.0), // Border radius for circular shape
-                                ),
-                                child: Center(
-                                    child: Container(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(5.0)),
+                            left: MediaQuery.of(context).size.width > 410
+                                ? 10.0
+                                : 2.0,
+                          ), // Adds padding to each child
+                          child: Container(
+                            constraints: const BoxConstraints(
+                              minHeight:
+                                  140.0, // Set the maximum height (optional)
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // mainAxisAlignment:MainAxisAlignment.start,
+                                Container(
+                                  width: 40.0,
+                                  height: 35.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.orange, // Color of the square
+                                    borderRadius: BorderRadius.circular(
+                                        50.0), // Border radius for circular shape
                                   ),
                                   child: const Center(
                                     child: Icon(
-                                      Icons.attach_money,
-                                      color: Colors.green,
+                                      Icons.directions_car,
+                                      color: Colors.white,
                                       size:
                                           20.0, // Set the size of the icon as needed
                                     ),
                                   ),
-                                )),
-                              ),
-                              const Text(
-                                'View \nUpcoming\nWithdrawal',
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 18.0),
-                              ),
-                            ],
+                                ),
+                               Text(
+                                  'Request \nRoadside\nHelp',
+                                  style: TextStyle(
+                                      color: Colors.black, 
+                                      fontSize: MediaQuery.of(context).size.width > 410?18:14),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      right: MediaQuery.of(context).size.width > 410 ? 10.0 : 0,
+                    ), // Adds padding to each child
+                    child: Card(
+                      // height: 140,
+                      child: Card(
+                        elevation: 10,
+                        color: Colors.white,
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width > 410
+                                ? 10.0
+                                : 2.0,
+                          ), // Adds padding to each child
+                          child: Container(
+                            constraints: const BoxConstraints(
+                              minHeight:
+                                  140.0, // Set the maximum height (optional)
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // mainAxisAlignment:MainAxisAlignment.start,
+                                Container(
+                                  width: 40.0,
+                                  height: 35.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green, // Color of the square
+                                    borderRadius: BorderRadius.circular(
+                                        50.0), // Border radius for circular shape
+                                  ),
+                                  child: Center(
+                                      child: Container(
+                                    width: 20.0,
+                                    height: 20.0,
+                                    decoration: const BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(5.0)),
+                                    ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.attach_money,
+                                        color: Colors.green,
+                                        size:
+                                            20.0, // Set the size of the icon as needed
+                                      ),
+                                    ),
+                                  )),
+                                ),
+                                Text(
+                                  'View \nUpcoming\nWithdrawal',
+                                  style: TextStyle(
+                                      color: Colors.black, 
+                                      fontSize: MediaQuery.of(context).size.width > 410?18:14),
+                                      
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -261,58 +283,70 @@ class FirstNew extends StatelessWidget {
           ),
         ),
 
- 
-
-
         Container(
           color: Colors.white,
           child: Column(
             children: [
               Card(
                 elevation: 10.0,
-            child: ListTile(
-              leading: const Icon(
-                Icons.directions_car,
-                size: 48.0,
-                color: Colors.blue,
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.directions_car,
+                    size: 48.0,
+                    color: Colors.blue,
+                  ),
+                  title: const Text(
+                    'Need to Make a Policy Change?',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text(
+                    'You can view or edit drivers, vehicle, or your coverage options.',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600),
+                  ),
+                  onTap: () {},
+                ),
               ),
-              title: const Text('Need to Make a Policy Change?',
-              style: TextStyle(fontWeight: FontWeight.bold),),
-              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
-              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
-              onTap: () {},
-            ),
-          ),
-          Card(
+              Card(
                 elevation: 10.0,
-            child: ListTile(
-              leading: const Icon(
-                Icons.directions_car,
-                size: 48.0,
-                color: Colors.blue,
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.directions_car,
+                    size: 48.0,
+                    color: Colors.blue,
+                  ),
+                  title: const Text(
+                    'Need to Make a Policy Change?',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text(
+                    'You can view or edit drivers, vehicle,or your coverage options.',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600),
+                  ),
+                  onTap: () {},
+                ),
               ),
-              title: const Text('Need to Make a Policy Change?',
-              style: TextStyle(fontWeight: FontWeight.bold),),
-              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
-              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
-              onTap: () {},
-            ),
-          ),
-          Card(
+              Card(
                 elevation: 10.0,
-            child: ListTile(
-              leading: const Icon(
-                Icons.directions_car,
-                size: 48.0,
-                color: Colors.blue,
+                child: ListTile(
+                  leading: const Icon(
+                    Icons.directions_car,
+                    size: 48.0,
+                    color: Colors.blue,
+                  ),
+                  title: const Text(
+                    'Need to Make a Policy Change?',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: const Text(
+                    'You can view or edit drivers, vehicle, or your coverage options.',
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.w600),
+                  ),
+                  onTap: () {},
+                ),
               ),
-              title: const Text('Need to Make a Policy Change?',
-              style: TextStyle(fontWeight: FontWeight.bold),),
-              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
-              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
-              onTap: () {},
-            ),
-          ),
             ],
           ),
         ),

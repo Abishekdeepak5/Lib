@@ -66,22 +66,25 @@ class FirstNew extends StatelessWidget {
         Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(10.0), // Adds padding to each child
+            padding: const EdgeInsets.only(top:10.0,bottom: 10.0), // Adds padding to each child
             child: Row(
               children: [
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 10.0, right: 10.0), // Adds padding to each child
-                    child: SizedBox(
-                      height: 120,
+                    padding: EdgeInsets.only(
+                       left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                        
+                    ), // Adds padding to each child
+                    child: Card(
+                      // height: 140,
                       child: Card(
                         elevation: 12,
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10.0,
-                              top: 5.0), // Adds padding to each child
+                          padding: EdgeInsets.only(
+                             left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                         ), // Adds padding to each child
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,17 +132,19 @@ class FirstNew extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 10.0, right: 10.0), // Adds padding to each child
-                    child: SizedBox(
-                      height: 120,
+                    padding:EdgeInsets.only(
+                         left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                            ), // Adds padding to each child
+                    child: Card(
+                      // height: 140,
                       child: Card(
                         elevation: 10,
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10.0,
-                              top: 5.0), // Adds padding to each child
+                          padding:  EdgeInsets.only(
+                               left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                            top:5.0,), // Adds padding to each child
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,18 +181,26 @@ class FirstNew extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 10.0, right: 10.0), // Adds padding to each child
-                    child: SizedBox(
-                      height: 120,
+                    padding: EdgeInsets.only(
+                       left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                         ), // Adds padding to each child
+                    child: Card(
+                      // height: 140,
                       child: Card(
                         elevation: 10,
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10.0,
-                              top: 5.0), // Adds padding to each child
-                          child: Column(
+                          padding: EdgeInsets.only(
+                             left:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                          right:MediaQuery.of(context).size.width > 600 ?10.0:0,
+                         
+                            ), // Adds padding to each child
+                          child: 
+                          SizedBox(
+                            height: 140.0,
+                            child:
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -227,6 +240,7 @@ class FirstNew extends StatelessWidget {
                             ],
                           ),
                         ),
+                        ),
                       ),
                     ),
                   ),
@@ -247,49 +261,58 @@ class FirstNew extends StatelessWidget {
           ),
         ),
 
+ 
+
+
         Container(
           color: Colors.white,
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 80.0,
-                width: double.infinity,
-                child: const Card(
-                  margin: EdgeInsets.only(top: 5.0, left: 5.0, right: 5.0),
-                  elevation: 5.0,
-                  color: Color.fromARGB(255, 213, 222, 231),
-                  child: Text("Abis"),
-                ),
+              Card(
+                elevation: 10.0,
+            child: ListTile(
+              leading: const Icon(
+                Icons.directions_car,
+                size: 48.0,
+                color: Colors.blue,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                height: 80.0,
-                width: double.infinity,
-                child: const Card(
-                  margin: EdgeInsets.only(top: 5.0, left: 5.0, right: 5.0),
-                  elevation: 5.0,
-                  color: Color.fromARGB(255, 213, 222, 231),
-                  child: Text("Abis"),
-                ),
+              title: const Text('Need to Make a Policy Change?',
+              style: TextStyle(fontWeight: FontWeight.bold),),
+              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
+              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
+              onTap: () {},
+            ),
+          ),
+          Card(
+                elevation: 10.0,
+            child: ListTile(
+              leading: const Icon(
+                Icons.directions_car,
+                size: 48.0,
+                color: Colors.blue,
               ),
-              Container(
-                height: 80.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: const Card(
-                  margin: EdgeInsets.only(top: 5.0, left: 5.0, right: 5.0),
-                  elevation: 5.0,
-                  color: Color.fromARGB(255, 213, 222, 231),
-                  child: Text("Abis"),
-                ),
+              title: const Text('Need to Make a Policy Change?',
+              style: TextStyle(fontWeight: FontWeight.bold),),
+              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
+              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
+              onTap: () {},
+            ),
+          ),
+          Card(
+                elevation: 10.0,
+            child: ListTile(
+              leading: const Icon(
+                Icons.directions_car,
+                size: 48.0,
+                color: Colors.blue,
               ),
+              title: const Text('Need to Make a Policy Change?',
+              style: TextStyle(fontWeight: FontWeight.bold),),
+              subtitle: const Text('You can view or edit drivers, vehicle, \nor your coverage options.',
+              style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.w600),),
+              onTap: () {},
+            ),
+          ),
             ],
           ),
         ),

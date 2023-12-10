@@ -60,7 +60,7 @@ class FirstNew extends StatelessWidget {
                           ' View All Policies ',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 60, 43, 211)),
+                              color: Color.fromRGBO(0, 71, 133, 1)),
                         ), //Text
                       ), //Center
                     ),
@@ -102,8 +102,7 @@ class FirstNew extends StatelessWidget {
                                   width: 40.0,
                                   height: 35.0,
                                   decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 60, 43,
-                                        211), // Color of the square
+                                    color: const Color.fromRGBO(0, 71, 133, 1), // Color of the square
                                     borderRadius: BorderRadius.circular(
                                         40.0), // Border radius for circular shape
                                   ),

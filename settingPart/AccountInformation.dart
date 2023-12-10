@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_app/settingPart/main/ChildWidget.dart';
-import 'package:new_app/settingPart/main/HeadingWidget.dart';
+import 'package:simple_layout/settingPart/main/ChildWidget.dart';
+import 'package:simple_layout/settingPart/main/HeadingWidget.dart';
 
 class AccountInformation extends StatefulWidget {
   const AccountInformation({super.key});

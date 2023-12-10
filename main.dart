@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/first_new.dart';
-// import 'package:new_app/first_page.dart';
 import 'package:new_app/second_page.dart';
+import 'package:new_app/settingPart/SettingMain.dart';
 import 'package:new_app/third_page.dart';
 
 void main() { 
@@ -36,17 +36,19 @@ class AppPage extends State<MyApp> {
           // Container(
           // color:Colors.grey,
           // child:
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               Padding(
-                padding: EdgeInsets.only(left: 16.0), // Adjust the left padding as needed
-                child: Text('AVECSAGE'),
+                padding: EdgeInsets.only(
+                 left: MediaQuery.of(context).size.width > 280?16.0:10.0,
+                ), // Adjust the left padding as needed
+                child: const Text('AVECSAGE'),
           ),
-          RoundedAppBarIconButton(),
+          const RoundedAppBarIconButton(),
               ],
               ),
               // Row(
@@ -66,7 +68,8 @@ class AppPage extends State<MyApp> {
                 bottomLeft: Radius.circular(10)),
           ),
           elevation: 0.00,
-          backgroundColor: const Color.fromARGB(255, 60, 43, 211),
+          // backgroundColor: const Color.fromARGB(255, 60, 43, 211)
+        backgroundColor: const  Color.fromRGBO(0, 71, 133, 1),
          
         ),
         
@@ -105,7 +108,7 @@ Widget buildBottomNavigationBar() {
           label: 'Profile',
         ),
       ],
-      selectedItemColor:const Color.fromARGB(255, 60, 43, 211),
+      selectedItemColor:const Color.fromRGBO(0, 71, 133, 1),
       unselectedItemColor: Colors.grey,
       currentIndex: currentPageIndex,
       onTap: (index) {
@@ -128,7 +131,9 @@ class RoundedAppBarIconButton extends StatelessWidget {
     Row(
     children:<Widget>[
     Container(
-      margin: const EdgeInsets.only(right: 16.0), // Adjust the margin as needed
+      margin:  EdgeInsets.only(
+        right: MediaQuery.of(context).size.width > 280?16:8
+        ), // Adjust the margin as needed
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Color.fromARGB(255, 24, 47, 66), // Change the background color here
@@ -145,7 +150,8 @@ class RoundedAppBarIconButton extends StatelessWidget {
     ),
 
     Container(
-      margin: const EdgeInsets.only(right: 16.0), // Adjust the margin as needed
+      margin: EdgeInsets.only( 
+        right: MediaQuery.of(context).size.width > 280?16:8), // Adjust the margin as needed
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Color.fromARGB(255, 24, 47, 66), // Change the background color here
@@ -160,7 +166,9 @@ class RoundedAppBarIconButton extends StatelessWidget {
     ),
 
     Container(
-      margin: const EdgeInsets.only(right: 16.0), // Adjust the margin as needed
+      margin: EdgeInsets.only(
+         right: MediaQuery.of(context).size.width > 280?16:8
+      ), // Adjust the margin as needed
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Color.fromARGB(255, 24, 47, 66), // Change the background color here
@@ -170,6 +178,13 @@ class RoundedAppBarIconButton extends StatelessWidget {
               icon: const Icon(Icons.settings),
               tooltip: 'Sitting Icon',
               onPressed: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Settings(),
+                  ),
+                );
+                // const Settings();
               },
             ),
     ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:new_app/settingPart/AccountInformation.dart';
-import 'package:new_app/settingPart/ContactUs.dart';
-import 'package:new_app/settingPart/ProfileSection.dart';
-import 'package:new_app/settingPart/SettingsOptions.dart';
+import 'package:simple_layout/settingPart/AccountInformation.dart';
+import 'package:simple_layout/settingPart/ContactUs.dart';
+import 'package:simple_layout/settingPart/ProfileSection.dart';
+import 'package:simple_layout/settingPart/SettingsOptions.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});

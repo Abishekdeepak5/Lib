@@ -15,6 +15,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.only(left: 16, right: 4),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:new_app/first_new.dart';
-import 'package:new_app/second_page.dart';
-import 'package:new_app/settingPart/SettingMain.dart';
-import 'package:new_app/third_page.dart';
+import 'package:simple_layout/first_new.dart';
+import 'package:simple_layout/second_page.dart';
+import 'package:simple_layout/settingPart/SettingMain.dart';
+import 'package:simple_layout/third_page.dart';
 
 void main() { 
   runApp(const MyApp());
